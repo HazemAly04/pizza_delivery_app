@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            
+            <!-- Confirmation Header -->
+            <div class="card shadow-lg border-0 rounded mb-4">
+                <div class="card-header text-center bg-danger text-white">
+                    <h4 class="mb-1">🎉 Order Confirmed!</h4>
+                    <p class="mb-0"><b>{{ order.name }}</b>, your order is being prepared! 🍕</p>
+                </div>
+                <div class="card-body text-center">
+                    <p class="mb-1">Your order number is <b>#{{ order.id }}</b>.</p>
+                    <p>Estimated delivery time: <b>🕒 {{ delivery_time_no_year }}</b>.</p>
+                </div>
+            </div>
+
+            <!-- Order Details -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-light text-center">
+                    <h5 class="mb-0">📦 Order Details</h5>
+                </div>
+                <div class="card-body bg-light">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-pizza-slice"></i> <b>Size:</b> {{ pizza.size }}</li>
+                        <li class="list-group-item"><i class="fas fa-bread-slice"></i> <b>Crust:</b> {{ pizza.crust }}</li>
+                        <li class="list-group-item"><i class="fas fa-wine-bottle"></i> <b>Sauce:</b> {{ pizza.sauce }}</li>
+                        <li class="list-group-item"><i class="fas fa-cheese"></i> <b>Cheese:</b> {{ pizza.cheese }}</li>
+                        <li class="list-group-item"><i class="fas fa-pepper-hot"></i> <b>Toppings:</b> {{ pizza.get_toppings }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Customer Details -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-light text-center">
+                    <h5 class="mb-0">🚚 Delivery Details</h5>
+                    <small>Estimated Delivery Time: <b>🕒 {{ delivery_time }}</b></small>
+                </div>
+                <div class="card-body bg-light">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-user"></i> <b>Name:</b> {{ order.name }}</li>
+                        <li class="list-group-item"><i class="fas fa-road"></i> <b>Street:</b> {{ order.street }}</li>
+                        <li class="list-group-item"><i class="fas fa-city"></i> <b>City:</b> {{ order.city }}</li>
+                        <li class="list-group-item"><i class="fas fa-map-marked-alt"></i> <b>County:</b> {{ order.county }}</li>
+                        <li class="list-group-item"><i class="fas fa-mail-bulk"></i> <b>Eircode:</b> {{ order.eircode }}</li>
+                        <li class="list-group-item"><i class="fas fa-clock"></i> <b>Time Ordered:</b> {{ pizzauser.time_ordered }}</li>
+                    </ul>     
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'pizza' %}" class="btn btn-danger btn-lg d-block mx-auto w-100 shadow-sm">
+                        ➕ Create Another Pizza
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="{% url 'previous_orders' %}" class="btn btn-outline-danger btn-lg d-block mx-auto w-100 shadow-sm">
+                        📜 View Previous Orders
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

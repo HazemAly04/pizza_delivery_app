@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="position-relative">
+  <img src="{% static 'images/hero.jpg' %}" 
+       alt="Delicious Pizza" 
+       class="img-fluid w-100 shadow-lg" 
+       style="height: 350px; object-fit: cover;">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-4" style="text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+    <h1 class="display-3 fw-bold">🍕 Welcome, {{ user.username }}!</h1>
+    <p class="lead">Craft your perfect pizza at Italiano Pizzeria</p>
+    <a href="{% url 'pizza' %}" class="btn btn-lg btn-warning text-dark fw-bold mt-3 px-4 shadow-sm">🔥 Create Your Pizza</a>
+  </div>
+</section>
+
+<!-- INFO SECTION -->
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center">
+      <img src="{% static 'images/pizza-3.jpeg' %}" 
+           alt="Custom Pizza" 
+           class="img-fluid rounded shadow-lg" 
+           style="max-height: 350px; object-fit: cover;">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3 text-danger">✨ Customize Your Experience</h2>
+      <p class="mb-4">Mix and match a wide array of fresh ingredients to design a pizza that’s uniquely yours. Whether you prefer classic or daring flavors, our artisanal recipes have got you covered.</p>
+      <a href="{% url 'pizza' %}" class="btn btn-danger btn-lg px-4 shadow-sm">🚀 Start Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE PIZZAS -->
+<section class="container py-5 text-center">
+  <h2 class="fw-bold mb-4 text-danger">🍕 Our Signature Pizzas</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{% static 'images/landscape1.jpg' %}" 
+           class="img-fluid rounded shadow-sm" 
+           alt="Pizza 1" 
+           style="height: 200px; object-fit: cover;">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/landscape2.jpg' %}" 
+           class="img-fluid rounded shadow-sm" 
+           alt="Pizza 2" 
+           style="height: 200px; object-fit: cover;">
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/landscape3.jpg' %}" 
+           class="img-fluid rounded shadow-sm" 
+           alt="Pizza 3" 
+           style="height: 200px; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="container py-5">
+  <h2 class="text-center fw-bold mb-5 text-danger">❓ Frequently Asked Questions</h2>
+  <div class="accordion shadow-lg rounded" id="faqAccordion">
+    
+    <!-- Dine-in Service -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="faqHeadingOne">
+        <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+          📍 Do we offer dine-in service?
+        </button>
+      </h2>
+      <div id="faqCollapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body bg-light">
+          ✅ Yes! You can enjoy our pizzas fresh in-store or have them delivered straight to your home. 🍕🏡
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Hours -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="faqHeadingTwo">
+        <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+          ⏰ What are our delivery hours?
+        </button>
+      </h2>
+      <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body bg-light">
+          🕐 We deliver <strong>24/7</strong>, straight to your doorstep! 🚗💨
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Fee -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="faqHeadingThree">
+        <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree">
+          💰 How much is our delivery fee?
+        </button>
+      </h2>
+      <div id="faqCollapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body bg-light">
+          🚚 Free delivery for orders above <strong>€20</strong>. Otherwise, a small <strong>€3</strong> fee applies. 💵
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock %}

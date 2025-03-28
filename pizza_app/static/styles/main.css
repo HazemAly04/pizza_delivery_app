@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  padding: 10px;
+}
+
+/* Buttons */
+.btn {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+
+/* Red Footer */
+/* Red Footer (Same as Navbar) */
+.footer {
+  background-color: #dc3545 !important; /* Red */
+  color: white !important; /* White text */
+  padding: 15px 0;
+  text-align: center;
+  border-top: 3px solid #b02a37;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* Ensure footer stays at the bottom */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
+
+
+
+
+/* Custom container to center elements */
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+/* Make images responsive */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+/* Custom Styling for Form */
+.card {
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+label {
+  font-weight: 600;
+}
+
+input, select {
+  height: 45px;
+  border-radius: 6px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+/* Add slight hover effect on form fields */
+input:focus, select:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5) !important;
+}
+
+
+
+
+
+
+/* 🔥 Improved Login Card Styling */
+.card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 🚀 Make inputs look modern */
+input {
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* 🔑 Password Field */
+input:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 6px rgba(220, 53, 69, 0.5) !important;
+}
+
+/* 🎨 Buttons */
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+/* 🔁 Forgot Password & Signup Links */
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5) !important;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: #b52b3b;
+  transform: scale(1.05);
+}
+
+
+/*hellop*/
+
+
+
+.img-fluid {
+  border-radius: 10px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #b52b3a;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.accordion-button {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.shadow-lg {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Fix the blue background on the accordion */
+.accordion-item {
+  background-color: #ffffff !important; /* Forces white background */
+  border-radius: 10px !important; /* Smooth rounded corners */
+  border: none !important; /* Removes any unwanted borders */
+}
+
+/* Style the accordion buttons */
+.accordion-button {
+  background-color: #ffffff !important; /* White background */
+  color: #333 !important; /* Darker text for readability */
+  font-weight: bold !important;
+  border-radius: 10px !important;
+}
+
+/* When an accordion button is clicked */
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa !important; /* Soft gray when expanded */
+  color: #d9534f !important; /* Stylish red to match your theme */
+}
+
+/* Remove Bootstrap's default box-shadow */
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+/* Style the accordion body */
+.accordion-body {
+  background-color: #ffffff !important; /* Keeps it white */
+  color: #333 !important;
+  font-size: 1rem;
+}

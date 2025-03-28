@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <form action="" method="POST" class="p-4 border rounded bg-white shadow-lg">
+          {% csrf_token %}
+
+          {% if form.errors %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                  {{ error }}
+                </div>
+            {% endfor %}
+          {% endif %}
+
+          <h3 class="text-center mb-4">🍕 Customize Your Pizza</h3>
+          <hr class="mb-3">
+
+          <h5 class="mb-3"><i class="fas fa-pizza-slice text-danger"></i> Pizza Details</h5>
+          <div class="mb-3">
+            <label><strong>📏 Size</strong></label>
+            {{ form.size }}
+          </div>
+          <div class="mb-3">
+            <label><strong>🍞 Crust</strong></label>
+            {{ form.crust }}
+          </div>
+          <div class="mb-3">
+            <label><strong>🍅 Sauce</strong></label>
+            {{ form.sauce }}
+          </div>
+          <div class="mb-3">
+            <label><strong>🧀 Cheese</strong></label>
+            {{ form.cheese }}
+          </div>
+
+          <hr class="my-4">
+
+          <h5 class="mb-3"><i class="fas fa-leaf text-success"></i> Toppings</h5>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-check">
+                {{ form.pepperoni }}
+                <label>🔴 Pepperoni</label>
+              </div>
+              <div class="form-check">
+                {{ form.ham }}
+                <label>🥩 Ham</label>
+              </div>
+              <div class="form-check">
+                {{ form.peppers }}
+                <label>🫑 Peppers</label>
+              </div>
+              <div class="form-check">
+                {{ form.onions }}
+                <label>🧅 Onions</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check">
+                {{ form.chicken }}
+                <label>🍗 Chicken</label>
+              </div>
+              <div class="form-check">
+                {{ form.pineapple }}
+                <label>🍍 Pineapple</label>
+              </div>
+              <div class="form-check">
+                {{ form.mushrooms }}
+                <label>🍄 Mushrooms</label>
+              </div>
+              <div class="form-check">
+                {{ form.olives }}
+                <label>🫒 Olives</label>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="btn btn-danger btn-lg w-100 shadow-sm" type="submit">
+            🚀 Order Your Pizza
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

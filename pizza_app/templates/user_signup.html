@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container pb-5">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-lg-6 col-md-8">
+      <div class="card shadow-lg border-0 rounded-lg p-4">
+        
+        <!-- Title -->
+        <h2 class="text-center mb-4 pt-2 fw-bold">🚀 Create an Account</h2>
+
+        <div class="card-body">
+          <form action="." method="POST">
+            {% csrf_token %}
+
+            <!-- Show Errors -->
+            {% if form.errors %}
+              {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                  ⚠️ {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label class="fw-bold">📧 Email</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-envelope-fill"></i></span>
+                {{ form.username }}
+              </div>
+              <small class="form-text text-muted">{{ form.username.help_text }}</small>
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label class="fw-bold">🔑 Password</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-lock-fill"></i></span>
+                {{ form.password1 }}
+              </div>
+              <small class="form-text text-muted">{{ form.password1.help_text }}</small>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="mb-3">
+              <label class="fw-bold">🔄 Confirm Password</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-check2-circle"></i></span>
+                {{ form.password2 }}
+              </div>
+              <small class="form-text text-muted">{{ form.password2.help_text }}</small>
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit" class="btn btn-danger btn-lg w-100 mt-3 shadow-sm">
+              🎉 Register Now
+            </button>
+          </form>
+        </div>
+
+        <!-- Already have an account? -->
+        <div class="text-center mt-3">
+          <span>Already a member? <a href="{% url 'login' %}" class="text-danger fw-bold">Login 🔑</a></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
